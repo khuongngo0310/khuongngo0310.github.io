@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Nunito', sans-serif;
+}
+.background{
+    background-image: url(https://wallpaperaccess.com/full/288027.jpg);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+.logo{
+    text-align: center;
+}
+.heading{
+    text-align: center;
+    position: relative;
+    color:white;
+    line-height: 45px;
+}
+.download{
+    text-align: center;
+    background-color: brown;
+    width: max-content;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    min-width: 150px;
+    justify-content: center;
+}
+.link-download{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: large;
+}
+.description{
+    text-align: center;
+    margin: 5px;
+}
+.description > h1 {
+    margin-top: 10px;
+}
+.description > h4 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+.description > hr {
+    width: 20em;
+    margin: auto;
+    height: 1px;
+    background-color: red;
+    border-style: ridge;
+    border: 0;
+    display: flex;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+.article{
+    width: 400px;
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 5px;
+}
+.describe{
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+}
+.article > h4 {
+    color: brown;
+    padding-bottom: 5px;
+    font-size: large;
+}
