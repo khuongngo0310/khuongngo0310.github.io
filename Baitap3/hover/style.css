@@ -4,22 +4,29 @@
     text-align: left;
     background: linear-gradient(to top, blue,white);
     margin : auto;
+    margin-top: 50px;
     transition-property: all;
     transition-delay: 0s;
     transition-duration: 1s;
     transition-timing-function: ease-in-out;
+    overflow: hidden;
+    position: relative;
 }
 .hoverbox:hover img{
     opacity: 0.4;
+}
+img{
+    display: block;
+    position: relative;
+    transition: all 0.5s ease-in-out;
 }
 figcaption{
     color: white;
     font-family: 'Raleway', Arial, sans-serif;
     position: absolute;
-    top: 0;
-    left: 0;
     height: 300px;
     width: 500px;
+    top: 0;
 }
 figcaption h2{
     top: 200px;
@@ -39,6 +46,6 @@ figcaption p {
 .hoverbox:hover figcaption p{
     opacity: 1;
 }
-.hoverbox:hover{
+.hoverbox:hover img{
     transform: scale(1.1);
 }

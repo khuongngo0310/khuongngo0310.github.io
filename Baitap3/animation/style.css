@@ -59,12 +59,12 @@
 }
 @keyframes rotatingcube{
 0%, 75%, 100%{
-    transform: scale3d(1,1,1) rotate(90deg);
+    transform: scale3d(1,1,1);
 }
 50%{
     background-color: whitesmoke;
 }
 25%{
-    transform: scale3d(0,0,1) rotate(-90deg);
+    transform: scale3d(0,0,1);
 }
 }
