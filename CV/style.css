@@ -1,0 +1,103 @@
+html {
+    scroll-behavior: smooth;
+  }
+body{
+      margin : 0;
+      font-family: "Rubik", sans-serif;
+  }
+img{
+      vertical-align: middle;
+  }
+a{
+      text-decoration: none;
+  }
+*{
+      padding: 0;
+      box-sizing: border-box;
+  }
+nav{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-self: flex-start; 
+      align-items: center;
+  }
+.fixed-header{
+      position: fixed;
+      background-color: aqua;
+      width: 100vw;
+      padding: 20px 0;
+      z-index: 1000;
+  }
+section{
+      padding-top: 100px;
+      height: 100vh;
+      display: block;
+  }
+section.home {
+      background: black;
+      padding: 0;
+  }
+#me {
+      background-color: blue;
+  }
+.nav-btn{
+        display: flex;
+        flex-direction: row;
+        margin-left: auto!important;
+  }
+.nav-item{
+    padding-right: 50px;
+    list-style-type: none;
+  }
+.nav-link:hover{
+      color: yellow;
+  }
+.title{
+      color:white;
+      text-align: center;
+      position: relative;
+      margin: auto;
+      box-sizing: border-box;
+      z-index: 1;
+  }
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: 920px;
+}
+}
+
+@media (min-width: 576px){
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 758px){
+    .container {
+        max-width: 720px;
+    }
+}
+@media only screen and (min-width: 768px){
+    .container {
+        max-width: 920px;
+    }
+}
+@media (min-width: 992px){
+        .container {
+            max-width: 960px;
+    }
+}
+.center{
+    transform: translate(0px, 100%);
+}
+.brand{
+    display: inline-block;
+}
+.navbar{
+    display: flex;
+    flex-grow: 1;
+}
