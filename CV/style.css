@@ -93,6 +93,9 @@ section.home {
 .nav-link:hover{
       color: yellow;
   }
+.active{
+    color: yellow;
+}
 .title{
       color:white;
       text-align: center;
