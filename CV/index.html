@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css">
     <link rel="stylesheet" href="./style.css">
-    <script src="https://kit.fontawesome.com/79efeedad5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./morphext.css">
 </head>
 <body>
     <header class="fixed-header">
@@ -19,10 +20,10 @@
                             <a href="#home" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#me" class="nav-link">Me</a>
+                            <a href="#about" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">Services</a>
+                            <a href="#services" class="nav-link">Services</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">Experience</a>
@@ -31,7 +32,7 @@
                             <a href="" class="nav-link">Works</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#me" class="Blog">Me</a>
+                            <a href="#me" class="nav-link">Blog</a>
                         </li>
                         <li class="nav-item">
                             <a href="#me" class="nav-link">Contact</a>
@@ -47,7 +48,7 @@
                 <div class="title">
                     <img src="./avatar-1.svg" alt="#" class="avatar">
                     <h1>Hello Everyone</h1>
-                    <h3>Ngo Duc Khuong</h3>
+                    <span>I'm a <span id="js-rotating" class="morphext">Fullstack Developer,Photography lover,UI/UX Designer</span></span>
                     <ul class="social-icons">
                         <li>
                             <a href="">
@@ -75,15 +76,126 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="pad-top">
+                    <div class="mt-4">
                         <a href="#home" class="hire-btn btn">Hire me</a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="me">
-
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="grid-container" id="intro">
+                        <img src="./avatar-2.svg" alt="" class="avatar">
+                    <div class="grid-container statistic" id="grid-4-6">
+                        <div class="mar20">
+                            <p class="left">I am Bolby Doe, web developer from London, United Kingdom. I have rich experience in web site design and building and customization, also I am good at WordPress.</p>
+                            <div class="mb-4 mt-4       " style="text-align: center;">
+                                <a href="#home" class="hire-btn btn">Download CV</a>
+                            </div>
+                        </div>
+                        <div class="mar20">
+                            <div class="skill-item">
+                                <div class="inline width100">
+                                    <h4 class="float-left">Development</h4>
+                                    <span class="float-right">80%</span>
+                                </div>
+                                <div class="progress mb-2">
+                                    <div class="progress" style="background-color: yellow; width: 80%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="inline width100">
+                                    <h4 class="float-left">UI/UX Design</h4>
+                                    <span class="float-right">95%</span>
+                                </div>
+                                <div class="progress mb-2">
+                                    <div class="progress" style="background-color: red; width: 95%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="inline width100">
+                                    <h4 class="float-left">Photography</h4>   
+                                    <span class="float-right">75%</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress" style="background-color: blue; width: 75%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>   
+                <div class="row achievement">
+                    <div class="achieve-items">
+                        <i class="fas fa-mug-hot"></i>
+                        <div class="achieve-details">
+                            <h2>192</h2>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                    <div class="achieve-items">
+                        <i class="fas fa-mug-hot"></i>
+                        <div class="achieve-details">
+                            <h2>192</h2>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                    <div class="achieve-items">
+                        <i class="fas fa-mug-hot"></i>
+                        <div class="achieve-details">
+                            <h2>192</h2>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                    <div class="achieve-items">
+                        <i class="fas fa-mug-hot"></i>
+                        <div class="achieve-details">
+                            <h2>192</h2>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <div class="row" id="row-three">
+                    <div class="service-items" style="background-color: red;">
+                        <img src="./service-1.svg" alt="">
+                        <h2>UI/UX Design</h2>
+                        <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
+                    </div>
+                    <div class="service-items" style="background-color: blue;">
+                        <img src="./service-2.svg" alt="">
+                        <h2>UI/UX Design</h2>
+                        <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
+                    </div>
+                    <div class="service-items" style="background-color: yellow;">
+                        <img src="./service-3.svg" alt="">
+                        <h2>UI/UX Design</h2>
+                        <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="./morphext.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+          $("#js-rotating").Morphext({
+            animation: "bounceIn",
+            separator: ",",
+            speed: 2000,
+            complete: function () {
+            }
+          });
+        });
+      </script>
+    <script src="https://kit.fontawesome.com/79efeedad5.js" crossorigin="anonymous"></script>
 </body>
 </html>
