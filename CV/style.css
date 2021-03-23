@@ -20,6 +20,7 @@ a{
 *{
       padding: 0;
       box-sizing: border-box;
+      color: white;
   }
 nav{
       display: flex;
@@ -127,10 +128,15 @@ section.home {
     }
 }
 @media (min-width: 992px){
-        .container {
-            max-width: 960px;
+    .container {
+        max-width: 960px;
     }
 }
+@media (min-width: 1366px){
+    .container {
+        max-width: 1080px;
+    }
+    }
 .center{
     transform: translate(0px, 100%);
 }
@@ -184,7 +190,7 @@ section.home {
 }
 #intro{
     grid-template-columns: 20% 80%;
-    column-gap: 80px;
+    column-gap: 0px;
 }
 #grid-4-6{
     grid-template-columns: 50% 50%;
@@ -226,7 +232,7 @@ h4{
     display: grid;
 }
 .achievement{
-    grid-template-columns: 30% 30% 30% 30%;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 .achieve-items{
     text-align: left;
@@ -253,8 +259,8 @@ h4{
     color: white;
 }
 #row-three {
-    grid-template-columns: 33.3333% 33.3333% 33.3333%;
-    column-gap: 50px;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 35px;
 }
 .service-items > img {
     display: inline-block;
