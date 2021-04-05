@@ -1,0 +1,9 @@
+.block{
+    background-color: aqua;
+    border: 1px solid;
+    padding: 20px;
+    margin: 20px;
+}
+.Bai{
+    display: none;
+}
