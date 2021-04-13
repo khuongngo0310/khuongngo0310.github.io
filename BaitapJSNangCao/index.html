@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form" class="input-field" action="https://606f8dee85c3f0001746ea9c.mockapi.io/users" method="POST">
+        <div class="box">
+            <span class="name">Item name</span>
+            <input class="input" type="text" name="item-name" id="item-name" style="">
+            <span id="alert-name" style="color: red; opacity: 0;">Item name invalid</span>
+        </div>
+        <div class="box">
+            <span>Category</span>
+            <select name="category" id="category" style="width: 90%; padding: 5px;">
+                <option value="none">None</option>
+                <option value="category1">Category 1</option>
+                <option value="category2">Category 2</option>
+                <option value="category2">Category 3</option>
+            </select>
+            <span id="category-alert" style="color: red; opacity: 0;">Category is required</span>
+        </div>
+        <div class="box">
+            <span>Put file</span>
+            <input id="file" name="file" type="file" accept="image/*" onchange="loadImg();">
+            <div class="img-container" style="margin: inherit;">
+                <img id="preview">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <table style="width:100%">
+        <tr>
+            <th>#</th>
+            <th>Item name</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Edit</th>
+        </tr>
+    </table>
+    <div class="inline"></div>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        function loadImg() {
+            let a = new FileReader();
+            a.readAsDataURL($("#file")[0].files[0]);
+            a.onload = function(){
+                    document.getElementById('preview').src = a.result;
+                }
+        };
+    </script>
+    <script>
+        let items = [];
+        function resetItems(items){
+            $("table").empty();
+            $("table").append(
+                "<tr>"+
+                    "<th>#</th>" +
+                    "<th>Item name</th>" +
+                    "<th>Category</th>" +
+                    "<th>Image</th>" +
+                    "<th>Edit</th>" +
+                "</tr>"
+            );
+            for (let i in items){
+                $("table").append(
+                    "<tr>" +
+                        "<td>" +
+                            Number(Number(i)+1)  +
+                        "</td>" +
+                        "<td>" +
+                            "<input id='input"+ i +"' class='input' value= '" + items[i].name +"' readonly>"+
+                        "</td>"+
+                        "<td>" +
+                            "<select class='category' name='category' disabled='true' id='category"+ i +"'>" +
+                                "<option value='category1'>Category 1</option>" +
+                                "<option value='category2'>Category 2</option>" +
+                                "<option value='category3'>Category 3</option>" +
+                            "</select>" +
+                        "</td>"+
+                        "<td>" +
+                            "<div class='img-container'>" +
+                            "<img id ='img"+i+"' src = '" + items[i].fileurl + "' class = 'image'>" +
+                            "</div>" + 
+                            "<input id='file"+i+"' style='margin-left: 37%; display: none;'  type='file' accept='image/*'>" +
+                        "</td>"+
+                        "<td>"+
+                            "<button id='edit"+ i +"' style='background-color: #08b008;'> Edit </button>" +
+                            "<button id='save"+ i +"' style='background-color: #175dde; display: none'> Save </button>" +
+                            "<button id='delete"+ i +"'style='background-color: #ff3838;'> Delete </button>" +
+                            "<button id='cancel"+ i +"'style='background-color: #ff3838; display: none'> Cancel </button>" +
+                        "</td>"+
+                    "</tr>"
+                )
+                $("#category" + i).val(items[i].category);
+                $("#delete" + i).click( function(){
+                    items.splice(i,1);
+                    localStorage.clear();
+                    for (let j in items){
+                        localStorage.setItem(j+"",JSON.stringify(items[j]));
+                    }
+                    resetItems(items);
+                });
+                $("#file"+i).change(function(){
+                    let a = new FileReader();
+                    a.readAsDataURL($("#file"+i)[0].files[0]);
+                    a.onload = function(){
+                        $('#img'+i)[0].src = a.result;
+                    }
+                });
+                $("#edit"+i).click(function(){
+                    this.style.display = 'none';
+                    $("#save"+i).css("display","inline-block");
+                    $("#cancel"+i).css("display","inline-block");
+                    $("#delete"+i).css("display","none");
+                    $("#input"+i).attr("readonly",false);
+                    $("#category"+i).attr("disabled",false);
+                    $("#file"+i).css("display","inline-block");
+                });
+                $("#save"+i).click(function(){
+                    this.style.display = 'none';
+                    $("#cancel"+i).css("display","none");
+                    $("#delete"+i).css("display","inline-block");
+                    items[i].name =  $("#input"+i).val();
+                    items[i].category = $("#category" + i).val();
+                    items[i].fileurl = $("#img"+i).attr("src");
+                    localStorage.setItem(i,JSON.stringify(items[i]));
+                    $("#edit"+i).css("display","inline-block");
+                    $("#input"+i).attr("readonly",true);
+                    $("#category"+i).attr("disabled",true);
+                    $("#file"+i).css("display","none");
+                });
+                $("#cancel"+i).click(function(){
+                    this.style.display = 'none';
+                    $("#file"+i).css("display","none");
+                    $("#save"+i).css("display","none");
+                    $("#delete"+i).css("display","inline-block");
+                    $("#edit"+i).css("display","inline-block");
+                    $("#input"+i).val(items[i].name);
+                    $("#category" + i).val( items[i].category);
+                    $("#img"+i).attr("src",items[i].fileurl);
+                });
+            }
+        }
+        $("#form").submit(function(event) {
+            var check = true;
+            if ( $("#item-name").val() == "") {
+                $("#alert-name").css("opacity","1");
+                check = false;
+            }
+            else{
+                $("#alert-name").css("opacity","0");
+            }
+            if ( $("#category").val() == "none"){
+                $("#category-alert").css("opacity","1");
+                check = false;
+            }
+            else{
+                $("#category-alert").css("opacity","0");
+            }
+            if (check)
+            {   
+                items.push(
+                    {
+                        "name" : $("#item-name").val(),
+                        "category" : $("#category").val(),
+                        "fileurl" : $("#preview").attr("src")
+                    }
+                );
+                localStorage.setItem(items.length - 1,JSON.stringify(
+                    {
+                        "name" : $("#item-name").val(),
+                        "category" : $("#category").val(),
+                        "fileurl" : $("#preview").attr("src")
+                    }
+                ));
+                resetItems(items);
+            }
+            event.preventDefault();
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            for (let i = 0; i < localStorage.length; i++){
+                items.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+            }
+            resetItems(items);
+        });
+    </script>
+</body>
+</html>
