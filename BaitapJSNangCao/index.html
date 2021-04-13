@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="form" class="input-field" action="https://606f8dee85c3f0001746ea9c.mockapi.io/users" method="POST">
+    <form id="form" class="input-field">
         <div class="box">
             <span class="name">Item name</span>
             <input class="input" type="text" name="item-name" id="item-name" style="">
@@ -26,7 +26,7 @@
         </div>
         <div class="box">
             <span>Put file</span>
-            <input id="file" name="file" type="file" accept="image/*" onchange="loadImg();">
+            <input id="file" name="file" type="file" accept=".jpg,.png" onchange="loadImg();">
             <div class="img-container" style="margin: inherit;">
                 <img id="preview">
                 <canvas id="canvas"></canvas>
@@ -149,7 +149,7 @@
         }
         $("#form").submit(function(event) {
             var check = true;
-            if ( $("#item-name").val() == "") {
+            if ( $("#item-name").val() == "" || $("#item-name").val().length >= 10 || ($("#item-name").val().charAt(0) >= '0' && $("#item-name").val().charAt(0) <= '9')) {
                 $("#alert-name").css("opacity","1");
                 check = false;
             }
