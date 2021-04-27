@@ -380,6 +380,23 @@
                     $("nav div ul li a[href='#" + elemId + "']").addClass('active');
                 }
             });
+            let outerHeight = $(this).outerHeight(true);
+            let ost = $($(".percent")[0]).offset().top;
+            if( windowTop > (ost - outerHeight)) {
+                $($(".percent")[0]).css("width","80%");
+            }
+            ost = $($(".percent")[1]).offset().top;
+            if( windowTop > (ost - outerHeight)) {
+                $($(".percent")[1]).css("width","95%");
+            }
+            ost = $($(".percent")[2]).offset().top;
+            if( windowTop > (ost - outerHeight)) {
+                $($(".percent")[2]).css("width","75%");
+            }
+            ost = $($(".cup")[0]).offset().top;
+            if( windowTop > (ost - outerHeight)) {
+                $(".cup").css("--num",192);
+            }
         };
 
         $(function () {
@@ -405,10 +422,10 @@
         });
     </script>
     <script>
-        $(".cup").css("--num",192);
-        $($(".percent")[0]).css("width","80%");
-        $($(".percent")[1]).css("width","95%");
-        $($(".percent")[2]).css("width","75%");
+        //$(".cup").css("--num",192);
+        //$($(".percent")[0]).css("width","80%");
+        //$($(".percent")[1]).css("width","95%");
+        //$($(".percent")[2]).css("width","75%");
     </script>
     <script src="./isotope.pkgd.min.js"></script>
     <script src="./portfolio.js"></script>

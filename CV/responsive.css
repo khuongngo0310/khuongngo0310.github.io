@@ -63,6 +63,12 @@
         .inline-items{
             padding: 5px 0px;
         }
+        .section-title{
+            margin-left: 10px;
+        }
+        .portfolio-filter{
+            margin-left: 10px;
+        }
     }
     @media (max-width: 768px){
         .navbar{
