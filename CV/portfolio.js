@@ -3,7 +3,7 @@ $(document).ready(function(){
         const value = $(this).attr('data-filter');
         if (value == '*'){
             $('.block-items').hide();
-            $('.block-items').show(1000);
+            $('.block-items').show(500);
         }
         else{
             $('.block-items').hide();

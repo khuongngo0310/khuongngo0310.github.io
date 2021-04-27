@@ -7,6 +7,7 @@
     <title>Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="./morphext.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
 </head>
@@ -15,6 +16,9 @@
         <div class="container">
             <nav>
                 <a href="#" class="brand"><img src="./logo.svg" alt="#"></a>
+                <button>
+                    <span class="icon-toggler"></span>
+                </button>
                 <div class="navbar">
                     <ul class="nav-btn">
                         <li class="nav-item">
@@ -32,12 +36,6 @@
                         <li class="nav-item">
                             <a href="#work" class="nav-link">Works</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#me" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#me" class="nav-link">Contact</a>
-                        </li>
                     </ul>
                 </div>
             </nav>
@@ -47,7 +45,7 @@
         <section id="home" class="home">
             <div class="container center">
                 <div class="title">
-                    <img src="./avatar-1.svg" alt="#" class="avatar">
+                    <img src="./avatar-1.svg" alt="#" class="">
                     <h1>Hello Everyone</h1>
                     <span>I'm a <span id="js-rotating" class="morphext">Fullstack Developer,Photography lover,UI/UX Designer</span></span>
                     <ul class="social-icons">
@@ -90,7 +88,7 @@
                         <img src="./avatar-2.svg" alt="" class="avatar">
                     <div class="grid-container statistic" id="grid-4-6">
                         <div class="mar20">
-                            <p class="left">I am Bolby Doe, web developer from London, United Kingdom. I have rich experience in web site design and building and customization, also I am good at WordPress.</p>
+                            <p class="left" style="line-height: 26px;">I am Bolby Doe, web developer from London, United Kingdom. I have rich experience in web site design and building and customization, also I am good at WordPress.</p>
                             <div class="mb-4 mt-4       " style="text-align: center;">
                                 <a href="#home" class="hire-btn btn">Download CV</a>
                             </div>
@@ -102,7 +100,7 @@
                                     <span class="float-right">80%</span>
                                 </div>
                                 <div class="progress mb-2">
-                                    <div class="progress" style="background-color: yellow; width: 80%;">
+                                    <div class="progress percent" style="background-color: rgb(255, 209, 92);">
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +110,7 @@
                                     <span class="float-right">95%</span>
                                 </div>
                                 <div class="progress mb-2">
-                                    <div class="progress" style="background-color: red; width: 95%;">
+                                    <div class="progress percent" style="background-color:rgb(255, 76, 96);">
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +120,7 @@
                                     <span class="float-right">75%</span>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress" style="background-color: blue; width: 75%;">
+                                    <div class="progress percent" style="background-color: rgb(108, 108, 229);">
                                     </div>
                                 </div>
                             </div>
@@ -133,28 +131,28 @@
                     <div class="achieve-items">
                         <i class="fas fa-mug-hot"></i>
                         <div class="achieve-details">
-                            <h2>192</h2>
+                            <h2 class="cup"></h2>
                             <p>Cup of coffee</p>
                         </div>
                     </div>
                     <div class="achieve-items">
                         <i class="fas fa-mug-hot"></i>
                         <div class="achieve-details">
-                            <h2>192</h2>
+                            <h2 class="cup"></h2>
                             <p>Cup of coffee</p>
                         </div>
                     </div>
                     <div class="achieve-items">
                         <i class="fas fa-mug-hot"></i>
                         <div class="achieve-details">
-                            <h2>192</h2>
+                            <h2 class="cup"></h2>
                             <p>Cup of coffee</p>
                         </div>
                     </div>
                     <div class="achieve-items">
                         <i class="fas fa-mug-hot"></i>
                         <div class="achieve-details">
-                            <h2>192</h2>
+                            <h2 class="cup"></h2>
                             <p>Cup of coffee</p>
                         </div>
                     </div>
@@ -165,17 +163,17 @@
             <div class="container">
                 <h2 class="section-title">Services</h2>
                 <div class="row" id="row-three">
-                    <div class="service-items" style="background-color: red;">
+                    <div class="service-items" style="background-color: rgb(249, 123, 139);">
                         <img src="./service-1.svg" alt="">
                         <h2>UI/UX Design</h2>
                         <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
                     </div>
-                    <div class="service-items" style="background-color: blue;">
+                    <div class="service-items" style="background-color: rgb(108, 108, 229);">
                         <img src="./service-2.svg" alt="">
                         <h2>UI/UX Design</h2>
                         <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
                     </div>
-                    <div class="service-items" style="background-color: yellow;">
+                    <div class="service-items" style="background-color: rgb(249, 215, 76);">
                         <img src="./service-3.svg" alt="">
                         <h2>UI/UX Design</h2>
                         <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo ligula eget.</p>
@@ -401,6 +399,17 @@
           });
         });
       </script>
+    <script>
+        $("button").click(function(){
+            $(".navbar").toggleClass("show");
+        });
+    </script>
+    <script>
+        $(".cup").css("--num",192);
+        $($(".percent")[0]).css("width","80%");
+        $($(".percent")[1]).css("width","95%");
+        $($(".percent")[2]).css("width","75%");
+    </script>
     <script src="./isotope.pkgd.min.js"></script>
     <script src="./portfolio.js"></script>
     <script src="https://kit.fontawesome.com/79efeedad5.js" crossorigin="anonymous"></script>

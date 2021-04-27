@@ -1,0 +1,146 @@
+    @media (min-width: 1200px){
+        .container {
+            max-width: 920px;
+        }
+    }
+    @media (min-width: 300px){
+        .row{
+            display: block;
+        }
+        .grid-container{
+            display: block;
+        }
+        .achieve-items{
+            display: inline-block;
+        }
+        .avatar{
+            display: block;
+            margin: auto;
+        }
+    }
+    
+    @media (min-width: 576px){
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: 758px){
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .container {
+            max-width: 920px;
+        }
+        .row{
+            display: block
+        }
+        .grid-container{
+            display: block;
+        }
+        .nav-btn{
+            margin-left: auto!important;
+            flex-direction: row;
+        }
+        button{
+            display: none;
+        }
+        .inline-items{
+            padding: 5px 0px;
+        }
+    }
+    @media (max-width: 580px){
+        .brand{
+            margin-left: 10px;
+        }
+        .icon-toggler{
+            margin-right: 10px;
+        }
+        .portfolio-filter{
+            display: block;
+        }
+        .inline-items{
+            padding: 5px 0px;
+        }
+    }
+    @media (max-width: 768px){
+        .navbar{
+            flex-basis: 100%;
+            flex-grow: 1;
+            display: none;
+        }
+        .nav-btn{
+            flex-direction: column;
+            margin-left: 0 !important;
+        }
+        nav {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .nav-item{
+            margin-top: 7px;
+        }
+        .show{
+            display: block;
+            opacity: 1;
+        }
+        .block-items{
+            max-width: initial;
+        }
+        .workgrid{
+            display: block;
+        }
+        .portfolio-filter{
+            display: block;
+        }
+        .inline-items{
+            padding: 5px 0px;
+        }
+        .skill-item{
+            margin: 30px 0px;
+        }
+        .achieve-items{
+            margin: 5px 0px 5px 25px;
+        }
+    }
+    @media (min-width: 992px){
+        .container {
+            max-width: 960px;
+        }
+        .grid-container{
+            display: grid;
+        }
+        .row{
+            display: grid;
+        }
+        .nav-btn{
+            margin-left: auto!important;
+            flex-direction: row;
+        }
+        .row{
+            display: block;
+        }   
+        .grid-container{
+            display: block;
+        }
+        .avatar{
+            display: block;
+            margin: auto;
+        }
+    }
+    @media (min-width: 1366px){
+        .container {
+            max-width: 1080px;
+        }
+        .grid-container{
+            display: grid;
+        }
+        .row{
+            display: grid;
+        }
+        .nav-btn{
+            margin-left: auto!important;
+            flex-direction: row;
+        }
+    }
