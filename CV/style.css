@@ -77,7 +77,7 @@ nav{
 section{
       padding-top: 100px;
       display: block;
-      min-height: 100vh;
+      /*min-height: 100vh;*/
   }
 section.home {
       background: #353353;
