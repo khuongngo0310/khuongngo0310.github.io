@@ -148,6 +148,7 @@ section.home {
     font-family: "Rubik", sans-serif;
     font-weight: 700;
     color: white;
+    display: inline-block;
 }
 .section-title{
     color: white;
@@ -457,4 +458,27 @@ button{
 }
 .cup::after{
     content: counter(num);
+}
+#work{
+    min-height: 666px;
+}
+@keyframes button-push{
+    50% { transform: scale(0.8);}
+    100% {transform: scale(1);}
+}
+.hire-btn:hover{
+    animation-name: button-push;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+.fab:hover, .fas:hover{
+    color: #FFD15C;
+}
+#jobbbb{
+    color: rgb(241, 65, 65);
+    transition: color 0.3s linear;
+}
+#jobbbb:hover{
+    color: #FFF;
 }

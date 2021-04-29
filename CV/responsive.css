@@ -135,6 +135,11 @@
             margin: auto;
         }
     }
+    @media (max-width: 1366px){
+        .service-items{
+            margin-bottom: 30px;
+        }
+    }
     @media (min-width: 1366px){
         .container {
             max-width: 1080px;
