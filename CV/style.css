@@ -432,7 +432,7 @@ button{
     inherits: false;
 }
 .cup{
-    transition: --num 5s;
+    transition: --num 4s;
     counter-reset: num var(--num);
 }
 @property --progress{
@@ -442,10 +442,17 @@ button{
 }
 .percent{
     width: 0%;
-    transition: width 2s ease-in-out;
+    transition: width 3s ease-in-out;
+}
+.float-right{
+    transition: --num 3s ease-in-out;
+    counter-reset: num var(--num);
+}
+.float-right::after{
+    content: counter(num)"%";
 }
 .cup:hover{
-    --num : 192;
+    --num : 0;
 }
 .cup::after{
     content: counter(num);

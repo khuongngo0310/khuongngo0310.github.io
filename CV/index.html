@@ -97,7 +97,7 @@
                             <div class="skill-item">
                                 <div class="inline width100">
                                     <h4 class="float-left">Development</h4>
-                                    <span class="float-right">80%</span>
+                                    <span class="float-right"></span>
                                 </div>
                                 <div class="progress mb-2">
                                     <div class="progress percent" style="background-color: rgb(255, 209, 92);">
@@ -107,7 +107,7 @@
                             <div class="skill-item">
                                 <div class="inline width100">
                                     <h4 class="float-left">UI/UX Design</h4>
-                                    <span class="float-right">95%</span>
+                                    <span class="float-right"></span>
                                 </div>
                                 <div class="progress mb-2">
                                     <div class="progress percent" style="background-color:rgb(255, 76, 96);">
@@ -117,7 +117,7 @@
                             <div class="skill-item">
                                 <div class="inline width100">
                                     <h4 class="float-left">Photography</h4>   
-                                    <span class="float-right">75%</span>
+                                    <span class="float-right"></span>
                                 </div>
                                 <div class="progress">
                                     <div class="progress percent" style="background-color: rgb(108, 108, 229);">
@@ -384,14 +384,17 @@
             let ost = $($(".percent")[0]).offset().top;
             if( windowTop > (ost - outerHeight)) {
                 $($(".percent")[0]).css("width","80%");
+                $($(".float-right")[0]).css("--num","80");
             }
             ost = $($(".percent")[1]).offset().top;
             if( windowTop > (ost - outerHeight)) {
                 $($(".percent")[1]).css("width","95%");
+                $($(".float-right")[1]).css("--num","95");
             }
             ost = $($(".percent")[2]).offset().top;
             if( windowTop > (ost - outerHeight)) {
                 $($(".percent")[2]).css("width","75%");
+                $($(".float-right")[2]).css("--num","75");
             }
             ost = $($(".cup")[0]).offset().top;
             if( windowTop > (ost - outerHeight)) {
