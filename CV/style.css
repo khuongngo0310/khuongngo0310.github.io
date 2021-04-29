@@ -83,6 +83,7 @@ section.home {
       background: #353353;
       padding: 0;
       height: 100vh;
+      min-height: 666px;
   }
 .nav-btn{
         display: flex;
